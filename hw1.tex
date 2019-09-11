@@ -4,12 +4,143 @@
 \author{Chandler Swift}
 \date{September 11, 2019}
 \usepackage{hyperref}
-
+\usepackage{amsmath}
 \begin{document}
 \maketitle
-\begin{itemize}
-  \item Text problem 1.8. Simply plugging 
-\end{itemize}
+\begin{enumerate}
+  \item Text problem 1.8. Simply plugging in 2025 yields $8.00 \times
+    10^{-0.05806(2025-1970)} \approx 5.13\text{nm} = 51.3\text{\AA}$. This is
+    about the width of 9-10 Silicon atoms, and indeed only slightly smaller
+    than the process nodes currently being used at about 7nm (Apple, AMD) or
+    Intel's 10nm silicon.
+
+    However, given that we're somewhat ahead of the curve given (in 2019,
+    seeing 7nm technology instead of the 11nm predicted by the equation for
+    2019, we notice that the curve is slightly underestimating the rate of
+    increase in transistor density. We will not likely be able to continue to
+    see similar increases in transistor density in the future, as the width
+    of transistors cannot get much smaller than they are currently.
+
+  \item A-D Conversion Table:
+    % for i in range(16):
+    %   print(f"      {i:04b} & {i/16*5}-{(i+1)/16*5}V \\\\")
+    \begin{tabular}{ c | c }
+      Digital Output & Analog Input (Volts) \\ \hline
+      0000 & 0.0-0.3125V \\
+      0001 & 0.3125-0.625V \\
+      0010 & 0.625-0.9375V \\
+      0011 & 0.9375-1.25V \\
+      0100 & 1.25-1.5625V \\
+      0101 & 1.5625-1.875V \\
+      0110 & 1.875-2.1875V \\
+      0111 & 2.1875-2.5V \\
+      1000 & 2.5-2.8125V \\
+      1001 & 2.8125-3.125V \\
+      1010 & 3.125-3.4375V \\
+      1011 & 3.4375-3.75V \\
+      1100 & 3.75-4.0625V \\
+      1101 & 4.0625-4.375V \\
+      1110 & 4.375-4.6875V \\
+      1111 & 4.6875-5.0V \\
+    \end{tabular}
+  \item $2^{24} = 16777216$. Experimentally, I can't see this number of colors.
+    (To test I built a demo page at \url{https://duluth.chandlerswift.com/color.html}
+    which gives comparisons of color changed by one bit. They're not visually
+    distinguishable, at least to my eyes on my screen.
+
+    $2^{30} = 1073741824$, which should certainly be indistinguishable, if 
+    24bpp (bit-per-pixel) color is not.
+  \item
+    \begin{enumerate}
+      \item 
+        \begin{enumerate}
+          \item V\textsubscript{th}=3.33V
+          \item R\textsubscript{th}=3.33k$\Omega$
+        \end{enumerate}
+      \item
+        \begin{enumerate}
+          \item V\textsubscript{th}=9V
+          \item R\textsubscript{th}=5k$\Omega$
+        \end{enumerate}
+    \end{enumerate}
+  \item
+    \begin{enumerate}
+      \item
+        V\textsubscript{th}=89.6V$_i$ \\
+        R\textsubscript{th}=75
+      \item
+        V\textsubscript{th}= \\
+        R\textsubscript{th}=75
+    \end{enumerate} 
+  \item 
+    \begin{tabular}{ l | l }
+      Parameter & equation \\ \hline
+        $V_{ba}(t)$ & $\sin(170 \pi t)V$ \\ \hline
+        $V_{ca}(t)$ & $0V$ \\ \hline
+        $V_{bc}(t)$ & $\sin(170 \pi t)V$ \\ \hline
+        $V_{ba}$(Peak Phasor) & $170V$ \\ \hline
+        $V_{ca}$(Peak Phasor) & $0V$ \\ \hline
+        $V_{bc}$(Peak Phasor) & $170V$ \\ \hline
+        $V_{ba}$(RMS Phasor) & $120V$ \\ \hline
+        $V_{ca}$(RMS Phasor) & $0V$ \\ \hline
+        $V_{bc}$(RMS Phasor) & $120V$ \\ \hline
+    \end{tabular}
+  \item
+    \begin{enumerate}
+      \item
+        \begin{enumerate}
+          \item The black wire (hot) is connected to the left prong, and white
+            (neutral) to the right prong. These should be switched. 
+          \item The fuse is connected on the grounded side, and should be
+            connected on the upstream side so that when it is blown there is no
+            power at the outlet (since if the ground was connected, that would
+            be a complete circuit, even without the neutral connector in place).
+          \item The ground is not connected. 
+          \item The ground is red instead of green.
+        \end{enumerate}
+      \item
+        \begin{enumerate}
+          \item The ground not being connected could make you the easiest path
+            to ground!
+          \item With the fuse on the neutral side, the fuse could blow and
+            there could still be power at the outlet, including a complete
+            circuit if some path to ground was present.
+          \item With hot and neutral switched, appliances expecting neutral to
+            be a safe voltage level might not take the same level of care
+            preventing it from coming in contact with the user (e.g. switching
+            the incorrect side).
+        \end{enumerate}
+      \item The lamp will work---the correct voltage is still being provided
+        to its two contacts, albeit backwards. However, being an AC circuit,
+        there's no such thing as backwards!
+    \end{enumerate}
+  \item
+    \begin{enumerate}
+      \item 
+        \begin{enumerate}
+          \item 41.6dB
+          \item 35.6dB
+          \item 94.0dB
+          \item 100dB
+          \item -0.915dB
+        \end{enumerate}
+      \item ---
+      \item
+        \begin{enumerate}
+          \item 93dB
+          \item 56dB
+          \item 88dB
+          \item 110dB
+        \end{enumerate}
+    \end{enumerate}
+  \item 
+    \begin{enumerate}
+      \item $\frac{(10\times10^{-6})^2}{50} = 2\times10^{-12}$
+      \item $10 \log (\frac{200}{2 \times 10^{-12}}) \approx 322$dB
+      \item 40V
+      \item $20 \log(\frac{40V}{10 \times 10^{-6}V}) \approx 304$dB
+    \end{enumerate}
+\end{enumerate}
 
 \end{document}
 
